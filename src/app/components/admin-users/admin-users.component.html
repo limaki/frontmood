@@ -1,0 +1,33 @@
+<p-toast></p-toast> <!-- Aquí se muestran los mensajes de éxito/error -->
+
+<div class="card">
+  <h2>Lista de Usuarios</h2>
+  
+  <!-- Spinner de carga mientras se obtienen los usuarios -->
+  <p-progressSpinner *ngIf="loading" styleClass="custom-spinner"></p-progressSpinner>
+
+  <!-- Tabla de usuarios -->
+  <p-table [value]="users" *ngIf="!loading" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Acciones</th> <!-- Nueva columna para acciones -->
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+          <!-- Botón para eliminar usuario -->
+          <p-button icon="pi pi-times" [rounded]="true" [text]="true" [raised]="true"(click)="deleteUser(user.id)" label="Eliminar" severity="danger" />
+
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+

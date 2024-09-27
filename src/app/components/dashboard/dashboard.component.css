@@ -1,19 +1,8 @@
-
-@import '../node_modules/primeng/resources/themes/saga-blue/theme.css';
-
-/* Importar los estilos principales de PrimeNG */
-@import '../node_modules/primeng/resources/primeng.min.css';
-
-@import '../node_modules/primeicons/primeicons.css';
-
-
-/* Estilo general para el dashboard */
 .dashboard-container {
-    background-color: #f5f5f5; /* Color de fondo general */
+    background-color: #f5f5f5;
     padding: 2rem;
   }
   
-  /* Barra de navegación o encabezado */
   .dashboard-header {
     background-color: #a31963;
     color: white;
@@ -23,7 +12,6 @@
     border-radius: 8px;
   }
   
-  /* Tarjetas o secciones dentro del dashboard */
   .dashboard-card {
     background-color: white;
     border: 1px solid #a31963;
@@ -37,7 +25,6 @@
     color: #a31963;
   }
   
-  /* Botones en el dashboard */
   .p-button-primary {
     background-color: #a31963;
     border: none;
@@ -47,7 +34,3 @@
     background-color: #7d0e4a;
   }
   
-
-
-/* Importar PrimeIcons (para iconos) 
-@import '../node_modules/primeng/';*/

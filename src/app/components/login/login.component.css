@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+    background-color: #f9f9f9;
+  }
+  
+  .card {
+    width: 420px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: white;
+  }
+  
+  .card-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    background-color: #a31963;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px 10px 0 0;
+    font-size: 1.6rem;
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  .logo {
+    width: 100px;  /* Ajusta el tamaño del logo */
+    height: auto;  /* Mantiene la relación de aspecto */
+    margin-bottom: 1rem;  /* Espacio entre el logo y el título */
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: #4d4d4d;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+  
+  .p-field {
+    margin-bottom: 1.5rem;
+  }
+  
+  .p-field label {
+    font-weight: 600;
+    color: #333;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+  }
+  
+  input:focus {
+    border-color: #a31963;
+    outline: none;
+    box-shadow: 0 0 5px rgba(163, 25, 99, 0.4);
+  }
+  
+  button {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.2rem;
+    border-radius: 6px;
+  }
+  
+  .p-button-primary {
+    background-color: #a31963;
+    border: none;
+  }
+  
+  .p-button-primary:hover {
+    background-color: #7d0e4a;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .info {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+  
+  .info a {
+    color: #a31963;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .info a:hover {
+    text-decoration: underline;
+  }
+  
