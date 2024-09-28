@@ -1,0 +1,172 @@
+/* Estilo general para el contenedor principal */
+.welcome-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    background-color: #2c3e50; /* Fondo oscuro */
+    padding: 20px;
+    margin-top: 10%;
+    margin-bottom: 15%;
+  }
+  
+  /* Tarjeta Principal */
+  .welcome-card {
+    background: #ffffff;
+    box-shadow: 2px 2px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    padding: 30px;
+    border-radius: 12px;
+    width: 70%;
+    max-width: 800px;
+    margin: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Imagen de Angular */
+  .angular-image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .angular-image {
+    height: 150px; /* Tamaño predeterminado */
+    margin-bottom: 20px;
+    transition: height 0.3s ease-in-out;
+  }
+  
+  /* Título de Bienvenida */
+  .welcome-title {
+    text-align: center;
+    color: #a31963; /* Color magenta */
+    font-size: 2.4em;
+    margin: 0 0 10px 0;
+  }
+  
+  /* Subtítulo */
+  .welcome-subtitle {
+    text-align: center;
+    font-size: 1.5em;
+    color: #333333;
+    margin: 0 0 20px 0;
+  }
+  
+  /* Descripción del Curso */
+  .welcome-description {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 0 0 30px 0;
+    color: #666666;
+  }
+  
+  /* Lista de Puntos Clave */
+  .welcome-points {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 30px 0;
+    text-align: center;
+  }
+  
+  .welcome-points li {
+    font-size: 1.1em;
+    color: #444444;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Botón de Inicio */
+  .start-button {
+    background-color: #a31963; /* Fondo magenta */
+    border: none;
+    color: #ffffff;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    border-radius: 25px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  /* Hover en el Botón de Inicio */
+  .start-button:hover {
+    background-color: #8e1453; /* Magenta más oscuro */
+  }
+  
+  /* --- Estilos Responsivos para Pantallas Medianas (Tablets) --- */
+  @media (max-width: 768px) {
+
+    .welcome-container {
+
+        margin-top: 90%;
+        margin-bottom: 90%;
+      }
+      
+    .welcome-card {
+      width: 90%; /* Ajustar el ancho */
+      max-width: 600px; /* Ancho máximo reducido */
+    }
+  
+    .angular-image {
+      height: 120px; /* Reducir el tamaño de la imagen */
+    }
+  
+    .welcome-title {
+      font-size: 2em; /* Reducir el tamaño del título */
+    }
+  
+    .welcome-subtitle {
+      font-size: 1.2em;
+    }
+  
+    .welcome-description {
+      font-size: 1.1em;
+    }
+  
+    .welcome-points li {
+      font-size: 1em; /* Reducir tamaño de los puntos */
+    }
+  }
+  
+  /* --- Estilos Responsivos para Pantallas Pequeñas (Móviles) --- */
+  @media (max-width: 480px) {
+    .welcome-card {
+      width: 100%; /* Ocupar todo el ancho en móviles */
+      padding: 20px; /* Ajustar el padding */
+    }
+  
+    .angular-image {
+      height: 100px; /* Imagen más pequeña en móviles */
+    }
+  
+    .welcome-title {
+      font-size: 1.8em;
+    }
+  
+    .welcome-subtitle {
+      font-size: 1em;
+    }
+  
+    .welcome-description {
+      font-size: 1em;
+    }
+  
+    .welcome-points li {
+      font-size: 0.9em;
+    }
+  
+    .start-button {
+      font-size: 1em; /* Reducir el tamaño del botón */
+      padding: 10px 15px; /* Ajustar el padding */
+    }
+
+    .welcome-container {
+
+        margin-top: 70%;
+        margin-bottom: 70%;
+      }
+  }
+  
+

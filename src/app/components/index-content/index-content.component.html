@@ -1,0 +1,39 @@
+<div class="dashboard-content">
+  <div class="card-container">
+    <!-- Tarjeta de Progreso del Curso -->
+    <p-card header="Progreso del Curso" class="dashboard-card magenta-card">
+      <p>Estás al 50% de completar el curso.</p>
+      <p-button 
+        routerLink="/moodlecontent" 
+        label="Ver más" 
+        icon="pi pi-arrow-right" 
+        [link]="true" 
+        class="magenta-link-button">
+      </p-button>
+    </p-card>
+
+    <!-- Tarjeta de Actividades Pendientes -->
+    <p-card header="Actividades Pendientes" class="dashboard-card magenta-card">
+      <p>Tienes 3 actividades pendientes.</p>
+      <p-button 
+        routerLink="/moodlecontent" 
+        label="Ver Actividades" 
+        icon="pi pi-list" 
+        [link]="true" 
+        class="magenta-link-button">
+      </p-button>
+    </p-card>
+
+    <!-- Tarjeta de Foros -->
+    <p-card header="Foros" class="dashboard-card magenta-card">
+      <p>Participa en los foros del curso.</p>
+      <p-button 
+        routerLink="/moodlecontent" 
+        label="Ver Foros" 
+        icon="pi pi-comments" 
+        [link]="true" 
+        class="magenta-link-button">
+      </p-button>
+    </p-card>
+  </div>
+</div>

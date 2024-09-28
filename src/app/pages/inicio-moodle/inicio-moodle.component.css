@@ -1,0 +1,66 @@
+/* Estilo del contenedor principal del footer */
+.footer-panel {
+    width: 100%; /* Ocupar todo el ancho */
+    background-color: #2c3e50; /* Fondo oscuro */
+    color: #ffffff; /* Color de texto blanco */
+    padding: 20px 30px; /* Espaciado interior */
+    border: none;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.15); /* Sombra superior suave */
+  }
+  
+  /* Contenedor del contenido del footer */
+  .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuir el logo, texto y "Creado por" */
+    max-width: 1200px; /* Ancho máximo para centrar el contenido */
+    margin: 0 auto; /* Centrar el contenedor */
+  }
+  
+  /* Estilo del Logo */
+  .footer-logo {
+    height: 90px; /* Tamaño del logo */
+    border-radius: 100px;
+  }
+  
+  /* Texto de derechos de autor */
+  .footer-text {
+    font-size: 1em; /* Tamaño del texto */
+    text-align: center;
+    flex: 1; /* Ocupa el espacio central */
+  }
+  
+  /* Texto "Creado por" */
+  .footer-created-by {
+    font-size: 1em; /* Tamaño del texto */
+  }
+  
+  .footer-created-by a {
+    color: #a31963; /* Color del enlace */
+    text-decoration: none; /* Sin subrayado */
+  }
+  
+  .footer-created-by a:hover {
+    color: #ffffff; /* Cambiar a magenta oscuro al hacer hover */
+  }
+  
+  /* --- Estilos Responsivos para Pantallas Pequeñas --- */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column; /* Apilar elementos en pantallas pequeñas */
+      text-align: center;
+    }
+  
+    .footer-logo {
+      margin-bottom: 15px; /* Espacio entre logo y texto */
+    }
+  
+    .footer-text {
+      margin: 10px 0;
+    }
+  
+    .footer-created-by {
+      margin-top: 10px;
+    }
+  }
+  

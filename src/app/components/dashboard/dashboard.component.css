@@ -1,36 +1,146 @@
+/* Definir colores base */
+:root {
+  --primary-color: #a31963; /* Color magenta */
+  --background-color: #f5f5f5; /* Color de fondo */
+  --text-color: #ffffff; /* Color del texto */
+}
+
+/* Contenedor principal del dashboard */
 .dashboard-container {
-    background-color: #f5f5f5;
-    padding: 2rem;
+  display: flex;
+  height: 100vh;
+  background-color: var(--background-color);
+}
+
+/* Estilo del Sidebar */
+.custom-sidebar {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.sidebar-title {
+  font-size: 24px;
+  color: var(--text-color);
+  text-align: center;
+  margin: 20px 0;
+}
+
+.sidebar-footer {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Estilos del contenido */
+.dashboard-content {
+  flex: 1;
+  padding: 20px;
+  background-color: var(--background-color);
+}
+
+/* Contenedor de las tarjetas */
+.card-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Estilo de las tarjetas */
+.dashboard-card {
+  flex: 1 1 calc(30% - 20px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid var(--primary-color);
+  text-align: center;
+}
+
+/* Estilo de los botones */
+.custom-button {
+  background-color: var(--primary-color) !important;
+  border: none !important;
+  color: var(--text-color) !important;
+}
+
+.custom-button:hover {
+  background-color: #8e1453 !important;
+  color: var(--text-color) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**/
+
+
+
+
+
+
+
+/* Estilo general del SpeedDial */
+
+
+/* Estilo general del SpeedDial */
+.custom-speed-dial {
+  position: absolute;
+  top: 40px; /* Ajusta la posición según el ícono */
+  left: 90%;
+  z-index: 1000;
+}
+
+/* Ocultar el botón principal del SpeedDial */
+.hidden-speed-dial {
+  display: none; /* Elimina el botón principal del SpeedDial */
+}
+
+/* Fondo y bordes del menú flotante cuando se abre */
+.p-speeddial ul {
+  background-color: rgba(0, 0, 0, 0.8); /* Fondo negro semi-opaco */
+  border: none; /* Sin borde */
+  padding: 10px;
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  transition: background-color 0.3s ease-in-out; /* Transición suave */
+}
+
+/* Color del fondo del ítem cuando está abierto */
+.p-speeddial ul li a {
+  background-color: rgba(163, 25, 99, 0.8); /* Fondo magenta opaco */
+  color: #ffffff; /* Color de los íconos */
+  border: none;
+}
+
+/* Cambia el color del ítem al pasar el mouse */
+.p-speeddial ul li a:hover {
+  background-color: rgba(163, 25, 99, 0.9); /* Fondo magenta más oscuro */
+}
+
+/* Fondo transparente y bordes ocultos del botón principal */
+.p-speeddial .p-speeddial-button {
+  background-color: transparent; /* Fondo transparente */
+  border: none; /* Sin bordes */
+}
+
+
+
+@media(max-width:600px){
+  .custom-speed-dial {
+   
+    left: 60%;
+    
   }
-  
-  .dashboard-header {
-    background-color: #a31963;
-    color: white;
-    padding: 1rem;
-    font-size: 1.5rem;
-    text-align: center;
-    border-radius: 8px;
-  }
-  
-  .dashboard-card {
-    background-color: white;
-    border: 1px solid #a31963;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  }
-  
-  .dashboard-card h3 {
-    color: #a31963;
-  }
-  
-  .p-button-primary {
-    background-color: #a31963;
-    border: none;
-  }
-  
-  .p-button-primary:hover {
-    background-color: #7d0e4a;
-  }
-  
+}

@@ -1,0 +1,100 @@
+/* Contenedor Principal */
+.module-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Ocupar todo el ancho disponible */
+    max-width: 1400px; /* Ancho máximo para pantallas grandes */
+    margin: 20px; /* Margen de 20px en todos los lados */
+    padding: 20px;
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+  }
+  
+  /* Tarjeta con el contenido */
+  .module-card {
+    width: 100%;
+    max-width: 1200px; /* Limitar el ancho máximo de la tarjeta */
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px; /* Separación entre tarjetas y botones */
+  }
+  
+  /* Controles de Navegación */
+  .navigation-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ocupar todo el ancho */
+    max-width: 1000px; /* Limitar el ancho máximo */
+    margin-top: 20px;
+  }
+  
+  /* Indicador de Página */
+  .page-indicator {
+    font-weight: bold;
+    margin: 0 10px;
+  }
+  
+  /* Estilo de los botones */
+  .p-button-outlined {
+    padding: 10px 15px;
+  }
+  
+  /* --- Estilos Responsivos para Pantallas Más Pequeñas --- */
+  @media (max-width: 768px) {
+    /* Ajustar contenedor principal */
+    .module-content-container {
+      margin: 10px; /* Reducir márgenes en dispositivos pequeños */
+      padding: 15px; /* Reducir el padding */
+    }
+  
+    /* Ajustar el tamaño de la tarjeta */
+    .module-card {
+      width: 100%; /* Ocupar el 100% del ancho disponible */
+      max-width: 700px; /* Ancho máximo reducido */
+      padding: 15px; /* Reducir el padding */
+    }
+  
+    /* Botones y controles de navegación en línea */
+    .navigation-controls {
+      flex-direction: column; /* Apilar los botones verticalmente */
+      width: 100%;
+      max-width: 700px;
+    }
+  
+    .p-button-outlined {
+      width: 100%; /* Botones ocupan todo el ancho */
+      margin: 5px 0; /* Espaciado vertical entre botones */
+    }
+  
+    /* Indicador de Página */
+    .page-indicator {
+      margin: 10px 0; /* Separación en dispositivos pequeños */
+    }
+  }
+  
+  /* --- Estilos Responsivos para Pantallas Muy Pequeñas --- */
+  @media (max-width: 480px) {
+    .module-content-container {
+      margin: 5px;
+      padding: 10px;
+    }
+  
+    .module-card {
+      width: 100%;
+      max-width: 100%; /* Sin límite de ancho */
+      padding: 10px; /* Reducir aún más el padding */
+    }
+  
+    .navigation-controls {
+      max-width: 100%;
+    }
+  
+    .p-button-outlined {
+      padding: 8px 12px; /* Ajustar tamaño de los botones */
+    }
+  }
+  

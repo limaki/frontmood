@@ -1,0 +1,68 @@
+:root {
+    --primary-color: #a31963; /* Color principal (Magenta) */
+    --primary-dark: #8e1453; /* Versión más oscura del magenta */
+    --primary-light: #e91e63; /* Magenta claro */
+    --text-color: #ffffff; /* Texto en blanco */
+    --background-color: #f0f0f0; /* Fondo claro para el tema */
+    --hover-color: #8e1453; /* Color hover en magenta oscuro */
+    --border-color: #8e1453; /* Bordes en magenta */
+    --menu-bg-color: #a31963; /* Fondo del menú */
+    --menu-text-color: #ffffff; /* Color de texto en el menú */
+  }
+
+  
+  /* Botones */
+.p-button {
+    background-color: var(--primary-color) !important;
+    border: none !important;
+    color: var(--text-color) !important;
+  }
+  
+  .p-button:hover {
+    background-color: var(--hover-color) !important;
+  }
+  
+  /* Bordes de las tarjetas */
+  .p-card {
+    border-top: 4px solid var(--primary-color) !important;
+  }
+  
+  .p-card .p-card-title {
+    color: var(--primary-color) !important;
+  }
+  
+  .p-card .p-card-subtitle {
+    color: var(--primary-light) !important;
+  }
+  
+  /* Sidebar */
+  .p-sidebar-content {
+    background-color: var(--primary-dark) !important;
+    color: var(--text-color) !important;
+  }
+  
+  /* Panel de menú dentro del sidebar */
+  .p-panelmenu .p-panelmenu-header-link {
+    background-color: var(--menu-bg-color) !important;
+    color: var(--menu-text-color) !important;
+  }
+  
+  .p-panelmenu .p-panelmenu-content .p-menuitem-link {
+    background-color: transparent !important;
+    color: var(--text-color) !important;
+  }
+  
+  .p-panelmenu .p-panelmenu-content .p-menuitem-link:hover {
+    background-color: var(--hover-color) !important;
+  }
+  
+  /* Tarjetas y contenedores */
+  .p-card {
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .p-card .p-card-title {
+    color: var(--primary-color);
+  }
+  

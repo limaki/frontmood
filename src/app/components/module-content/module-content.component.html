@@ -1,0 +1,34 @@
+<div class="module-content-container">
+    <!-- Tarjeta con el Contenido del Módulo -->
+    <p-card class="module-card">
+      <h2>{{ pages[currentPageIndex].title }}</h2>
+      <p>{{ pages[currentPageIndex].content }}</p>
+    </p-card>
+  
+    <!-- Controles de Navegación -->
+    <div class="navigation-controls">
+      <!-- Botón Anterior -->
+      <button
+        pButton
+        icon="pi pi-arrow-left"
+        label="Anterior"
+        class="p-button-outlined"
+        [disabled]="currentPageIndex === 0"
+        (click)="prevPage()" routerLink="/moodlecontent"
+      ></button>
+  
+      <!-- Indicador de Página Actual -->
+      <span class="page-indicator">Página {{ currentPageIndex + 1 }} de {{ pages.length }}</span>
+  
+      <!-- Botón Siguiente -->
+      <button
+        pButton
+        icon="pi pi-arrow-right"
+        label="Siguiente"
+        class="p-button-outlined"
+        [disabled]="currentPageIndex === pages.length - 1"
+        (click)="nextPage()"
+      ></button>
+    </div>
+  </div>
+  

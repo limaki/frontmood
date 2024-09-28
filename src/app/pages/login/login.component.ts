@@ -17,6 +17,8 @@ import { filter } from 'rxjs';
 
 //scroller
 import { ViewportScroller } from '@angular/common';
+import { FooterComponent } from "../../components/footer/footer.component";
+
 
 @Component({
   selector: 'app-login',
@@ -24,8 +26,7 @@ import { ViewportScroller } from '@angular/common';
   imports: [ReactiveFormsModule, FormsModule, NgIf,
     InputTextModule,
     PasswordModule,
-    ButtonModule
-  ],
+    ButtonModule, FooterComponent],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -67,7 +68,7 @@ export class LoginComponent {
             confirmButtonColor: '#a31963'
           }).then(() => {
             // Redirigir al dashboard u otra ruta protegida después de la alerta
-            this.router.navigate(['/dashboard']);
+            this.router.navigate(['/moodlestart']);
           });
         } else {
           // Si no hay JWT en la respuesta, mostrar un error
