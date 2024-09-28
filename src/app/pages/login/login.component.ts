@@ -1,9 +1,8 @@
-import { Component, ViewChild, inject } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { LoginService } from '../../services/login.service';
 import { AuthenticationRequest } from '../../models/auth.models';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
@@ -24,7 +23,7 @@ import { FooterComponent } from "../../components/footer/footer.component";
     PasswordModule,
     ButtonModule,
     FooterComponent,
-    SweetAlert2Module // Importamos SweetAlert2Module en las imports del componente
+    SweetAlert2Module // Importación directa sin .forRoot()
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
@@ -33,22 +32,23 @@ export class LoginComponent {
   authRequest: AuthenticationRequest = { email: '', password: '' };
   errorMessage: string = '';
 
-  private viewportScroller = inject(ViewportScroller);
+  constructor(
+    private authService: LoginService,
+    private router: Router,
+    private viewportScroller: ViewportScroller
+  ) {}
 
   // Referencias a SwalComponent para éxito y error
-  @ViewChild('loginSuccess') loginSuccess!: SwalComponent;
-  @ViewChild('loginError') loginError!: SwalComponent;
-  @ViewChild('noTokenError') noTokenError!: SwalComponent;
-
-  constructor(private authService: LoginService, private router: Router) {}
+  @ViewChild('loginSuccess', { static: true }) loginSuccess!: SwalComponent;
+  @ViewChild('loginError', { static: true }) loginError!: SwalComponent;
+  @ViewChild('noTokenError', { static: true }) noTokenError!: SwalComponent;
 
   ngOnInit() {
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe(() => {
-      console.log('Navegación completada: desplazando hacia la parte superior');
-      this.viewportScroller.scrollToAnchor('top');
-    });
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => {
+        this.viewportScroller.scrollToAnchor('top');
+      });
   }
 
   login() {
@@ -58,24 +58,28 @@ export class LoginComponent {
           localStorage.setItem('token', response.jwt);
           console.log('JWT almacenado con éxito:', response.jwt);
 
-          // Mostrar alerta de éxito usando SwalComponent
-          this.loginSuccess.fire().then(() => {
-            this.router.navigate(['/moodlestart']);
-          });
+          // Verificar que SwalComponent esté disponible antes de llamar a fire()
+          if (this.loginSuccess) {
+            this.loginSuccess.fire().then(() => {
+              this.router.navigate(['/moodlestart']);
+            });
+          }
         } else {
           this.errorMessage = 'No token received';
           console.error('No se recibió un JWT en la respuesta.');
 
-          // Mostrar alerta de error usando SwalComponent
-          this.noTokenError.fire();
+          if (this.noTokenError) {
+            this.noTokenError.fire();
+          }
         }
       },
       (error) => {
         this.errorMessage = 'Email o contraseña inválido(s)';
         console.error('Error en el inicio de sesión:', error);
 
-        // Mostrar alerta de error usando SwalComponent
-        this.loginError.fire();
+        if (this.loginError) {
+          this.loginError.fire();
+        }
       }
     );
   }
