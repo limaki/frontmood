@@ -9,8 +9,8 @@ import { AuthenticationRequest, AuthenticationResponse, SignupRequest } from '..
 })
 export class LoginService {
 
-  //private apiUrl = "https://backendmood-5.onrender.com" + '/api/auth'; // URL base de la API
-  private apiUrl = "http://localhost:8080" + '/api/auth';
+  private apiUrl = "https://backendmood-5.onrender.com" + '/api/auth'; // URL base de la API
+  //private apiUrl = "http://localhost:8080" + '/api/auth';
 
   constructor(private http: HttpClient) { }
 
