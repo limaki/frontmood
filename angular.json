@@ -19,6 +19,9 @@
             "polyfills": [
               "zone.js"
             ],
+            "allowedCommonJsDependencies": [
+              "sweetalert2"
+            ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
@@ -34,7 +37,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "1mb",  
+                  "maximumWarning": "1.5mb",  
                   "maximumError": "2mb"     
                 },
                 {
