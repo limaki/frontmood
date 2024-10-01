@@ -112,3 +112,29 @@
     text-decoration: underline;
   }
   
+
+
+
+
+
+
+  /*Spinner*/
+
+  /* Centrar el spinner y el mensaje */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.custom-spinner {
+  margin-bottom: 15px;
+}
+
+.loading-message {
+  font-size: 16px;
+  color: #007ad9; /* Color del mensaje */
+  text-align: center;
+  margin-top: 10px;
+}

@@ -3,7 +3,6 @@
     <div class="card-header">
       <!-- Logo de la institución -->
       <img src="../../../assets/instituto.png" alt="Logo de la Institución" class="logo" />
-
       <h2>Acceso a la Plataforma</h2>
     </div>
     <div class="card-body">
@@ -11,7 +10,14 @@
         Bienvenido al sistema de la Institución. Por favor, ingrese sus credenciales para acceder a la plataforma. Si no recuerda su contraseña, contacte al administrador.
       </p>
 
-      <form (ngSubmit)="login()">
+      <!-- Spinner de carga con mensaje personalizado -->
+      <div class="loading-container" *ngIf="loading">
+        <p-progressSpinner styleClass="custom-spinner"></p-progressSpinner>
+        <p class="loading-message">Por favor, espera un momento mientras procesamos tu solicitud...</p>
+      </div>
+
+      <!-- Formulario de inicio de sesión, se oculta cuando loading es true -->
+      <form *ngIf="!loading" (ngSubmit)="login()">
         <!-- Campo de correo electrónico -->
         <div class="p-field">
           <label for="email">Correo Electrónico</label>
@@ -40,15 +46,14 @@
   </div>
 
   <!-- SweetAlert2 Components -->
-  <!-- Mensaje de éxito en inicio de sesión -->
   <swal #loginSuccess title="Inicio de sesión exitoso" icon="success" text="Has iniciado sesión correctamente."></swal>
-
-  <!-- Mensaje de error en inicio de sesión -->
   <swal #loginError title="Error de inicio de sesión" icon="error" text="El correo electrónico o la contraseña son incorrectos."></swal>
-
-  <!-- Mensaje de error por falta de token -->
   <swal #noTokenError title="Error" icon="error" text="No se recibió un token"></swal>
 </div>
+
+
+
+
 
   
 

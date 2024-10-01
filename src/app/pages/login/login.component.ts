@@ -11,6 +11,7 @@ import { SweetAlert2Module, SwalComponent } from '@sweetalert2/ngx-sweetalert2';
 import { filter } from 'rxjs';
 import { ViewportScroller } from '@angular/common';
 import { FooterComponent } from "../../components/footer/footer.component";
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,8 @@ import { FooterComponent } from "../../components/footer/footer.component";
     PasswordModule,
     ButtonModule,
     FooterComponent,
-    SweetAlert2Module // Importación directa sin .forRoot()
+    SweetAlert2Module,
+    ProgressSpinnerModule
   ],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
@@ -31,6 +33,7 @@ import { FooterComponent } from "../../components/footer/footer.component";
 export class LoginComponent {
   authRequest: AuthenticationRequest = { email: '', password: '' };
   errorMessage: string = '';
+  loading: boolean = false; // Variable para controlar el estado de carga
 
   constructor(
     private authService: LoginService,
@@ -52,13 +55,16 @@ export class LoginComponent {
   }
 
   login() {
+    this.loading = true; // Mostrar spinner al iniciar la petición
+    this.errorMessage = '';
+
     this.authService.login(this.authRequest).subscribe(
       (response) => {
+        this.loading = false; // Ocultar spinner cuando se reciba la respuesta
         if (response && response.jwt) {
           localStorage.setItem('token', response.jwt);
           console.log('JWT almacenado con éxito:', response.jwt);
 
-          // Verificar que SwalComponent esté disponible antes de llamar a fire()
           if (this.loginSuccess) {
             this.loginSuccess.fire().then(() => {
               this.router.navigate(['/moodlestart']);
@@ -74,6 +80,7 @@ export class LoginComponent {
         }
       },
       (error) => {
+        this.loading = false; // Ocultar spinner en caso de error
         this.errorMessage = 'Email o contraseña inválido(s)';
         console.error('Error en el inicio de sesión:', error);
 
