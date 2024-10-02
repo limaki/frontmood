@@ -52,31 +52,26 @@ export class DashboardComponent implements OnInit {
   constructor(private router: Router, private loginService: LoginService) {
     // Definir los ítems del Sidebar
     this.menuItems = [
-      { label: 'Inicio', icon: 'pi pi-home', routerLink: ['/moodleindex'] },
-      // { label: 'Dashboard', icon: 'pi pi-home', routerLink: ['/dashboard'] },
-      { label: 'Mis Cursos', icon: 'pi pi-book', routerLink: ['/courses'] },
+      { label: 'Inicio', icon: 'pi pi-home', routerLink: ['/moodleindex'] }, // Ícono de casa para la página principal
+      { label: 'Modulos', icon: 'pi pi-book', routerLink: ['/courses'] }, // Ícono de libro para módulos de curso
+      { label: 'Foros', icon: 'pi pi-comments', routerLink: ['/forums'] }, // Ícono de comentarios para foros
+    
       {
-        label: 'Evaluaciones',
-        icon: 'pi pi-pencil',
+        label: 'Más información',
+        icon: 'pi pi-info-circle', // Ícono de información para submenú de información adicional
         items: [
-          { label: 'Tareas', icon: 'pi pi-file', routerLink: ['/tasks'] },
-          { label: 'Exámenes', icon: 'pi pi-check-square', routerLink: ['/exams'] }
+          { label: 'Tutorial', icon: 'pi pi-bookmark', routerLink: ['/tutorial'] }, // Ícono de marcador para tutoriales
+          { label: 'Preguntas Frecuentes', icon: 'pi pi-question-circle', routerLink: ['/faq'] }, // Ícono de pregunta para FAQs
+          { label: 'Acerca de', icon: 'pi pi-info', routerLink: ['/about'] }, // Ícono de información para "Acerca de"
+          { label: 'Página Oficial', icon: 'pi pi-globe', url: 'https://institutomayor.com.ar/' }, // Ícono de globo para enlace externo
         ]
       },
-      { label: 'Foros', icon: 'pi pi-comments', routerLink: ['/forums'] },
-      
-      
-      
-      { separator: true }, // Línea de separación entre secciones del menú
-      
-      { label: 'Tutorial', icon: 'pi pi-bookmark', routerLink: ['/tutorial'] },
-      { label: 'Preguntas Frecuentes', icon: 'pi pi-question-circle', routerLink: ['/faq'] }, 
-      { label: 'Acerca de', icon: 'pi pi-info-circle', routerLink: ['/about'] },
-      { label: 'Página Oficial', icon: 'pi pi-globe', url: 'https://institutomayor.com.ar/' }, // Ejemplo de enlace externo
-      { separator: true }, // Otra línea de separación antes de cerrar sesión
-      { label: 'Cerrar Sesión', icon: 'pi pi-sign-out', command: () => this.onLogout() }, // Asume que existe un método logout()
-      { label: 'Administración', icon: 'pi pi-cog', routerLink: ['/administration'] },
+    
+      { separator: true }, // Línea de separación antes de la siguiente sección
+      { label: 'Cerrar Sesión', icon: 'pi pi-sign-out', command: () => this.onLogout() }, // Ícono de cerrar sesión para logout
+      { label: 'Administración', icon: 'pi pi-cog', routerLink: ['/administration'] }, // Ícono de engranaje para la administración
     ];
+    
    
 
     // Definir las acciones del SpeedDial
