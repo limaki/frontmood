@@ -1,34 +1,58 @@
 <div class="module-content-container">
-    <!-- Tarjeta con el Contenido del Módulo -->
-    <p-card class="module-card">
+  <!-- Tarjeta con el Contenido del Módulo --> 
+  <!-- Controles de Navegación -->
+  <div class="navigation-controls">
+    <!-- Botón Anterior -->
+    <button
+      pButton
+      icon="pi pi-arrow-left"
+      label="Anterior"
+      class="p-button-outlined"
+      [disabled]="currentPageIndex === 0"
+      (click)="prevPage()"
+    ></button>
+
+    <!-- Indicador de Página Actual -->
+    <span class="page-indicator">Página {{ currentPageIndex + 1 }} de {{ pages.length }}</span>
+
+    <!-- Botón Siguiente -->
+    <button
+      pButton
+      icon="pi pi-arrow-right"
+      label="Siguiente"
+      class="p-button-outlined"
+      [disabled]="currentPageIndex === pages.length - 1"
+      (click)="nextPage()"
+    ></button>
+  </div>
+  <p-card class="module-card">
+    <div class="card-content">
       <h2>{{ pages[currentPageIndex].title }}</h2>
       <p>{{ pages[currentPageIndex].content }}</p>
-    </p-card>
-  
-    <!-- Controles de Navegación -->
-    <div class="navigation-controls">
-      <!-- Botón Anterior -->
-      <button
-        pButton
-        icon="pi pi-arrow-left"
-        label="Anterior"
-        class="p-button-outlined"
-        [disabled]="currentPageIndex === 0"
-        (click)="prevPage()" routerLink="/moodlecontent"
-      ></button>
-  
-      <!-- Indicador de Página Actual -->
-      <span class="page-indicator">Página {{ currentPageIndex + 1 }} de {{ pages.length }}</span>
-  
-      <!-- Botón Siguiente -->
-      <button
-        pButton
-        icon="pi pi-arrow-right"
-        label="Siguiente"
-        class="p-button-outlined"
-        [disabled]="currentPageIndex === pages.length - 1"
-        (click)="nextPage()"
-      ></button>
+
+      <!-- Descripción adicional -->
+      <ng-container *ngIf="pages[currentPageIndex].additionalInfo">
+        <h3 class="additional-title">Información Adicional</h3>
+        <p>{{ pages[currentPageIndex].additionalInfo }}</p>
+      </ng-container>
+
+      <!-- Desglose Detallado (si aplica) -->
+      <ng-container *ngIf="pages[currentPageIndex].details">
+        <h3 class="details-title">Detalles de la Sección</h3>
+        <ul>
+          <li *ngFor="let detail of pages[currentPageIndex].details">{{ detail }}</li>
+        </ul>
+      </ng-container>
+
+      <!-- Ejemplos o Proyectos relacionados (si aplica) -->
+      <ng-container *ngIf="pages[currentPageIndex].examples">
+        <h3 class="examples-title">Ejemplos y Proyectos Relevantes</h3>
+        <ul>
+          <li *ngFor="let example of pages[currentPageIndex].examples">{{ example }}</li>
+        </ul>
+      </ng-container>
     </div>
-  </div>
-  
+  </p-card>
+
+ 
+</div>

@@ -138,3 +138,10 @@
   text-align: center;
   margin-top: 10px;
 }
+
+.time-warning {
+  color: red; /* Color del mensaje en rojo */
+  font-weight: bold; /* Aplica negrita */
+  margin-top: 10px; /* Un poco de espacio superior */
+  font-size: 14px; /* Tamaño de fuente */
+}

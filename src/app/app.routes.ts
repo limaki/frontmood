@@ -8,6 +8,8 @@ import { ModuleContentComponent } from './components/module-content/module-conte
 import { InicioMoodleComponent } from './pages/inicio-moodle/inicio-moodle.component';
 import { ContentmoodleComponent } from './pages/contentmoodle/contentmoodle.component';
 import { IndexMoodleComponent } from './pages/index-moodle/index-moodle.component';
+import { AdministrationComponent } from './pages/administration/administration.component';
+import { CreateUserComponent } from './pages/create-user/create-user.component';
 
 export const routes: Routes = [
     { path: '', component: PresentationComponent },
@@ -15,7 +17,9 @@ export const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent }, // Ruta protegida
     { path: 'moodlestart', component: InicioMoodleComponent, canActivate: [authGuard]},
     { path: 'moodlecontent' , component: ContentmoodleComponent, canActivate: [authGuard] },
-    { path: 'moodleindex' , component: IndexMoodleComponent, canActivate: [authGuard] }
+    { path: 'moodleindex' , component: IndexMoodleComponent, canActivate: [authGuard] },
+    { path: 'administration', component: AdministrationComponent, canActivate: [authGuard]},
+    { path: 'addusers', component: CreateUserComponent, canActivate: [authGuard]}
    // { path: '**', redirectTo: '' }, // Redirige cualquier ruta no encontrada al login
     // { path: 'slicepage', component: ModuleContentComponent},
     // {path : 'adminusers', component: AdminUsersComponent}

@@ -1,0 +1,53 @@
+<p-toast position="top-right"></p-toast> <!-- Contenedor de notificaciones -->
+<div class="signup-container">
+  <div class="signup-header">
+    <h2><i class="pi pi-user-plus"></i> Crear Nuevo Usuario</h2>
+    <p class="subtitle">Complete el formulario a continuación para crear un nuevo usuario.</p>
+  </div>
+
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signup-form">
+    <div class="p-fluid">
+      <!-- Campo de Nombre -->
+      <div class="p-field">
+        <label for="name">Nombre <span class="required">*</span></label>
+        <input id="name" pInputText formControlName="name" placeholder="Ingrese su nombre" />
+        <small class="p-error" *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched">
+          <i class="pi pi-exclamation-circle"></i> El nombre debe tener al menos 3 caracteres.
+        </small>
+      </div>
+
+      <!-- Campo de Email -->
+      <div class="p-field">
+        <label for="email">Email <span class="required">*</span></label>
+        <input id="email" pInputText formControlName="email" placeholder="Ingrese su email" />
+        <small class="p-error" *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+          <i class="pi pi-exclamation-circle"></i> Por favor, ingrese un email válido.
+        </small>
+      </div>
+
+      <!-- Campo de Contraseña -->
+      <div class="p-field">
+        <label for="password">Contraseña <span class="required">*</span></label>
+        <p-password id="password" formControlName="password" placeholder="Ingrese su contraseña" [feedback]="true" toggleMask>
+        </p-password>
+        <small class="p-error" *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+          <i class="pi pi-exclamation-circle"></i> La contraseña debe tener al menos 6 caracteres.
+        </small>
+      </div>
+
+      <!-- Spinner de carga -->
+      <div class="spinner-container" *ngIf="isLoading">
+        <p-progressSpinner styleClass="custom-spinner"></p-progressSpinner>
+        <p class="loading-message">Creando usuario, por favor espere...</p>
+      </div>
+
+      <!-- Botón de Registro -->
+      <div class="button-container">
+        <button pButton type="submit" label="Registrarse" class="p-button-success" [disabled]="isLoading || !signupForm.valid">
+          <i class="pi pi-save"></i>
+          <span>Registrarse</span>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

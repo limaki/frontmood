@@ -1,43 +1,14 @@
-<!-- <div class="dashboard-container"  id="top">
-   
-    <div class="dashboard-header">
-      Bienvenido a tu Dashboard
-    </div>
-  
-    
-    <div class="p-grid">
-      <div class="p-col-12 p-md-6 p-lg-4">
-        <div class="dashboard-card">
-          <h3>Estadísticas</h3>
-          <p>Visualiza las estadísticas de tu aplicación.</p>
-          <button pButton label="Ver más" class="p-button-primary"></button>
-        </div>
-      </div>
-  
-      <div class="p-col-12 p-md-6 p-lg-4">
-        <div class="dashboard-card">
-          <h3>Reportes</h3>
-          <p>Genera reportes detallados de tu rendimiento.</p>
-          <button pButton label="Generar reporte" class="p-button-primary"></button>
-        </div>
-      </div>
-  
-      <div class="p-col-12 p-md-6 p-lg-4">
-        <div class="dashboard-card">
-          <h3>Configuración</h3>
-          <p>Personaliza las configuraciones de tu cuenta.</p>
-          <button pButton label="Ir a configuración" class="p-button-primary"></button>
-        </div>
-      </div>
-    </div>
-  </div> -->
-<!-- Botón para abrir el Sidebar -->
+
 <!-- Botón para abrir el sidebar -->
-<div style="width: 100%; height: 60px; border-bottom: 2px solid violet; margin-bottom: 5%; display: flex; align-items: center; justify-content: space-between;">
-  <!-- Botón de Menú -->
-  <button pButton type="button" icon="pi pi-bars" label="Menú" (click)="displaySidebar = true" class="magenta-button"></button>
-  <div style="margin: auto;">
-    <p-speedDial 
+ <div style="width: 100%; height: 60px; border-bottom: 2px solid violet; margin-bottom: 5%; display: flex; align-items: center; justify-content: space-between;">
+
+  <button pButton type="button" icon="pi pi-bars" label="Menú" (click)="displaySidebar = true" class="magenta-button"></button> 
+
+
+  <!-- Circulo de personita -->
+<!-- SpeedDial con opciones para cambiar el tema -->
+<div style="margin-right: 20px;margin: auto;">
+  <p-speedDial 
     [model]="items" 
     direction="down" 
     [visible]="showSpeedDial" 
@@ -45,44 +16,25 @@
     hideIcon="pi pi-times" 
     class="custom-speed-dial"
     buttonStyleClass="hidden-speed-dial"
-    type="semi-circle"
-    
-  /></div>
-  <!-- Ícono adicional a la derecha -->
-  <!-- <i class="pi pi-user" style="font-size: 1.8em; cursor: pointer;" (click)="toggleSpeedDial()"></i> -->
+    type="semi-circle">
+  </p-speedDial>
+</div>
 
-  <!-- Menú Flotante SpeedDial Controlado -->
+
+  
 
 </div>
 
 <!-- Sidebar de navegación -->
-<p-sidebar [(visible)]="displaySidebar" position="left" [baseZIndex]="10000">
+ <p-sidebar [(visible)]="displaySidebar" position="left" [baseZIndex]="10000">
   <h2 class="sidebar-title">Moodle LMS</h2>
   <p-panelMenu [model]="menuItems"></p-panelMenu>
   <div class="sidebar-footer">
     <button type="button" pButton label="Cerrar" icon="pi pi-times" (click)="displaySidebar = false" class="magenta-button"></button>
   </div>
-</p-sidebar>
+</p-sidebar> 
 
 <!-- Contenido Principal -->
-<!-- <div class="dashboard-content">
-  <div class="card-container">
-    <p-card header="Progreso del Curso" class="dashboard-card magenta-card">
-      <p>Estás al 50% de completar el curso.</p>
-      <button pButton label="Ver más" icon="pi pi-arrow-right" class="magenta-button"></button>
-    </p-card>
-
-    <p-card header="Actividades Pendientes" class="dashboard-card magenta-card">
-      <p>Tienes 3 actividades pendientes.</p>
-      <button pButton label="Ver Actividades" icon="pi pi-list" class="magenta-button"></button>
-    </p-card>
-
-    <p-card header="Foros" class="dashboard-card magenta-card">
-      <p>Participa en los foros del curso.</p>
-      <button pButton label="Ver Foros" icon="pi pi-comments" class="magenta-button"></button>
-    </p-card>
-  </div>
-</div> -->
 
 
   

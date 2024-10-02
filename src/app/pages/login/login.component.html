@@ -10,10 +10,12 @@
         Bienvenido al sistema de la Institución. Por favor, ingrese sus credenciales para acceder a la plataforma. Si no recuerda su contraseña, contacte al administrador.
       </p>
 
-      <!-- Spinner de carga con mensaje personalizado -->
+      <!-- Spinner de carga con mensaje personalizado y advertencia -->
       <div class="loading-container" *ngIf="loading">
         <p-progressSpinner styleClass="custom-spinner"></p-progressSpinner>
         <p class="loading-message">Por favor, espera un momento mientras procesamos tu solicitud...</p>
+        <!-- Mensaje adicional en rojo para indicar el tiempo estimado -->
+        <p class="time-warning">Puede tardarse varios minutos</p>
       </div>
 
       <!-- Formulario de inicio de sesión, se oculta cuando loading es true -->
@@ -50,10 +52,6 @@
   <swal #loginError title="Error de inicio de sesión" icon="error" text="El correo electrónico o la contraseña son incorrectos."></swal>
   <swal #noTokenError title="Error" icon="error" text="No se recibió un token"></swal>
 </div>
-
-
-
-
 
   
 
