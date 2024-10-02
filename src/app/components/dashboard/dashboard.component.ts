@@ -44,11 +44,16 @@ export class DashboardComponent implements OnInit {
 
   // Definir el tema seleccionado como propiedad de la clase
   selectedTheme: string = 'viva-light';  // Tema predeterminado
-
+   onLogout(): void {
+    this.loginService.logout();
+    console.log('Sesión cerrada y datos eliminados');
+    this.router.navigate(['/login']);
+  }
   constructor(private router: Router, private loginService: LoginService) {
     // Definir los ítems del Sidebar
     this.menuItems = [
-      { label: 'Dashboard', icon: 'pi pi-home', routerLink: ['/dashboard'] },
+      { label: 'Inicio', icon: 'pi pi-home', routerLink: ['/moodleindex'] },
+      // { label: 'Dashboard', icon: 'pi pi-home', routerLink: ['/dashboard'] },
       { label: 'Mis Cursos', icon: 'pi pi-book', routerLink: ['/courses'] },
       {
         label: 'Evaluaciones',
@@ -59,15 +64,27 @@ export class DashboardComponent implements OnInit {
         ]
       },
       { label: 'Foros', icon: 'pi pi-comments', routerLink: ['/forums'] },
-      { label: 'Administración', icon: 'pi pi-cog', routerLink: ['/administration'] }
+      
+      
+      
+      { separator: true }, // Línea de separación entre secciones del menú
+      
+      { label: 'Tutorial', icon: 'pi pi-bookmark', routerLink: ['/tutorial'] },
+      { label: 'Preguntas Frecuentes', icon: 'pi pi-question-circle', routerLink: ['/faq'] }, 
+      { label: 'Acerca de', icon: 'pi pi-info-circle', routerLink: ['/about'] },
+      { label: 'Página Oficial', icon: 'pi pi-globe', url: 'https://institutomayor.com.ar/' }, // Ejemplo de enlace externo
+      { separator: true }, // Otra línea de separación antes de cerrar sesión
+      { label: 'Cerrar Sesión', icon: 'pi pi-sign-out', command: () => this.onLogout() }, // Asume que existe un método logout()
+      { label: 'Administración', icon: 'pi pi-cog', routerLink: ['/administration'] },
     ];
+   
 
     // Definir las acciones del SpeedDial
     this.items = [
       { label: 'Tema Claro', icon: 'pi pi-sun', command: () => this.changeTheme('viva-light') },
       { label: 'Tema Oscuro', icon: 'pi pi-moon', command: () => this.changeTheme('viva-dark') },
       { label: 'Tema Azul', icon: 'pi pi-palette', command: () => this.changeTheme('arya-blue') },
-      { label: 'Cerrar Sesión', icon: 'pi pi-sign-out', command: () => this.onLogout() }
+      // { label: 'Cerrar Sesión', icon: 'pi pi-sign-out', command: () => this.onLogout() }
     ];
   }
 
@@ -83,11 +100,7 @@ export class DashboardComponent implements OnInit {
   }
 
   // Método para cerrar sesión
-  onLogout(): void {
-    this.loginService.logout();
-    console.log('Sesión cerrada y datos eliminados');
-    this.router.navigate(['/login']);
-  }
+
 
   // Método para cambiar y guardar el tema en localStorage
   changeTheme(theme: string) {

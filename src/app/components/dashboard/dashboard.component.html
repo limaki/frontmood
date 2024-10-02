@@ -12,7 +12,7 @@
     [model]="items" 
     direction="down" 
     [visible]="showSpeedDial" 
-    showIcon="pi pi-user" 
+    showIcon="pi pi-pen-to-square" 
     hideIcon="pi pi-times" 
     class="custom-speed-dial"
     buttonStyleClass="hidden-speed-dial"
@@ -27,7 +27,7 @@
 
 <!-- Sidebar de navegación -->
  <p-sidebar [(visible)]="displaySidebar" position="left" [baseZIndex]="10000">
-  <h2 class="sidebar-title">Moodle LMS</h2>
+  <h2 class="sidebar-title">Dashboard</h2>
   <p-panelMenu [model]="menuItems"></p-panelMenu>
   <div class="sidebar-footer">
     <button type="button" pButton label="Cerrar" icon="pi pi-times" (click)="displaySidebar = false" class="magenta-button"></button>
